@@ -1,5 +1,4 @@
 # JavaScript
-# JavaScript B - Studies and Practice
 
 Welcome to my repository **JavaScript**, where I document my journey of learning and practicing JavaScript. This project includes code snippets, exercises, and small projects focused on improving my understanding of the JavaScript language and its features.
 

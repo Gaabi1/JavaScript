@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google charts</title>
+</head>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<body>
+    <h1>Gooogle Charts</h1>
+    <form onsubmit="executar(event)">
+        <label for="v1">Valor de x:</label>
+        <input type="number" id="v1">
+        <button type="submit">Executar</button>
+    </form>
+    <div id="chart_div"></div>
+    <div id="media"></div>
+</body>
+    <script src="ex003.js"></script>
+    <script>
+        google.charts.load('current', {'packages':['corechart', 'line']});
+        google.charts.setOnLoadCallback(() => {
+            drawBasic(); // inicia o gráfico vazio
+        });
+        const executar = (event) =>{
+            event.preventDefault();
+            const x = parseInt(document.getElementById('v1').value);
+            if (isNaN(x)) return;
+            addValor(x);
+            drawBasic();
+            document.getElementById('media').innerHTML = `Média: ${media()}`;
+        }
+    </script>
+</html>

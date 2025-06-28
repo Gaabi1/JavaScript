@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Calculando IMC</h1>
+    <form onsubmit="executar(event)">
+         
+        <label>Peso kg </label><input type="number" id="v1" step="0.1" required>
+        
+        <label>Altura m </label><input type="number" id="v2" step="0.01" required>
+        
+        <button type="submit">Executar</button>
+    </form>
+    <div id="res">Resultado</div>
+</body>
+<script src="ex001.js"></script>
+<script>
+    const executar = (event) => {
+        event.preventDefault();
+        const peso = parseFloat(document.getElementById("v1").value);
+        const altura = parseFloat(document.getElementById("v2").value);
+        const v_imc = imc(peso, altura)
+        const s_imc = situacao(v_imc);
+        document.getElementById("res").innerHTML= 
+        `IMC: ${v_imc.toFixed(2)}<br>Situação:${s_imc}`;
+    }
+</script>
+</html>
